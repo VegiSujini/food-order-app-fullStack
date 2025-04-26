@@ -2,14 +2,14 @@
 
 # 🍔 Food Order App
 
-A full-stack web application for placing food orders, updating their status, uploading an image for the order, and downloading the image back.
+description: "A full-stack web application for placing food orders, updating their status, uploading an image for the order, and downloading the image back."
 
-This project is built using:
-- **Backend**: Spring Boot
-- **Frontend**: React.js
-- **Database**: H2 in-memory database
-- **File Uploads**: Multipart file handling (Spring Boot)  
-- **File Storage**: Images are saved locally on disk
+project:
+  backend: "Spring Boot"
+  frontend: "React.js"
+  database: "H2 in-memory database"
+  file_uploads: "Multipart file handling (Spring Boot)"
+  file_storage: "Images are saved locally on disk"
 
 ---
 
