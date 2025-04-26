@@ -36,7 +36,7 @@ food-order-app/
 ### 1. Backend (Spring Boot)
 
 #### Prerequisites:
-- Java 8 or higher
+- Java 21
 - Maven
 
 #### Steps:
@@ -49,7 +49,7 @@ mvn spring-boot:run
 
 - H2 Console: `http://localhost:8080/h2-console`
 - Database: In-memory (`H2`)
-- Upload Directory: Files will be saved under:  
+- Upload Directory: Files will be upload from:  
   `F:/projects-full-stack/food-order-app/backend/food-order-app/uploads/`
 
 > Make sure the above `uploadDir` path exists or is configurable.
