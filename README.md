@@ -1,5 +1,3 @@
-Of course! Here's a **README.md** file based on your project (both backend + frontend):
-
 ---
 
 # 🍔 Food Order App
@@ -143,12 +141,13 @@ spring.servlet.multipart.max-request-size=10MB
 
 | Place Order Form | Orders List Page |
 |:----------------:|:----------------:|
-| ![form](https://via.placeholder.com/300x150.png?text=Place+Order) | ![list](https://via.placeholder.com/300x150.png?text=Order+List) |
+| ![image](https://github.com/user-attachments/assets/ce5bb690-e088-4dc6-8909-f0093e4b633a)
+ |
 
 ---
 
 ## ✍️ Author
 
-> Built with ❤️ using **Spring Boot** + **React.js**.
+> Built with ❤️ SUJI ❤️ using **Spring Boot** + **React.js**.
 
 --
