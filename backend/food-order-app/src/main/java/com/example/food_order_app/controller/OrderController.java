@@ -1,18 +1,22 @@
 package com.example.food_order_app.controller;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.food_order_app.model.FoodOrder;
@@ -46,8 +50,8 @@ public class OrderController {
     @GetMapping("/{id}")
     public ResponseEntity<FoodOrder> getOrder(@PathVariable Long id) {
         return service.getOrderById(id)
-                      .map(ResponseEntity::ok)
-                      .orElse(ResponseEntity.notFound().build());
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     // 4. Update status of the order
@@ -59,32 +63,35 @@ public class OrderController {
 
     // 5. Upload image for an order
     @PostMapping("/{orderId}/upload-image")
-public ResponseEntity<String> uploadImage(
-        @PathVariable Long orderId,
-        @RequestParam("file") MultipartFile file) {
+    public ResponseEntity<String> uploadImage(
+            @PathVariable Long orderId,
+            @RequestParam("file") MultipartFile file) {
 
-    try {
-        String message = service.uploadImage(orderId, file);
-        return ResponseEntity.ok(message);
-    } catch (IOException e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload image");
+        try {
+            String message = service.uploadImage(orderId, file);
+            return ResponseEntity.ok(message);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload image");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
-}
 
     // 6. Download image for an order
     @GetMapping("/{orderId}/download-image")
-public ResponseEntity<Resource> downloadImage(@PathVariable Long orderId) {
-    try {
-        byte[] imageData = service.downloadImage(orderId);
-        ByteArrayResource resource = new ByteArrayResource(imageData);
+    public ResponseEntity<Resource> downloadImage(@PathVariable Long orderId) {
+        try {
+            byte[] imageData = service.downloadImage(orderId);
+            ByteArrayResource resource = new ByteArrayResource(imageData);
 
-        return ResponseEntity.ok()
-                .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"image.jpg\"")
-                .body(resource);
-    } catch (IOException e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"image.jpg\"")
+                    .body(resource);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
-
-}
 }
