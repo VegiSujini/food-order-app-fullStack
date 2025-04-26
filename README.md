@@ -1,4 +1,3 @@
----
 
 # 🍔 Food Order App
 
@@ -154,5 +153,3 @@ spring.servlet.multipart.max-request-size=10MB
 ## ✍️ Author
 
 > Built with ❤️ SUJI ❤️ using **Spring Boot** + **React.js**.
-
---
