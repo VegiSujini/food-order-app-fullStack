@@ -143,10 +143,10 @@ spring.servlet.multipart.max-request-size=10MB
 
 ## 📸 Screenshots (Example)
 
-| Place Order Form | Orders List Page |
-|:----------------:|:----------------:|
-| ![image](https://github.com/user-attachments/assets/ce5bb690-e088-4dc6-8909-f0093e4b633a)
- |
+
+ ![image](https://github.com/user-attachments/assets/ce5bb690-e088-4dc6-8909-f0093e4b633a)
+ ![image](https://github.com/user-attachments/assets/7a39f62c-5943-458d-90ad-ceb8266faed7)
+ ![image](https://github.com/user-attachments/assets/d948f723-048d-451f-ac27-055c619ce97e)
 
 ---
 
