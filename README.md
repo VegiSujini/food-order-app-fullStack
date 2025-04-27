@@ -115,20 +115,15 @@ npm start
 
 ```properties
 # Database Config
+spring.application.name=food-order-app
+
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
-
-# JPA Config
-spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.h2.console.enabled=true
-
 # File Upload Config
 file.upload-dir=F:/projects-full-stack/food-order-app/backend/food-order-app/uploads
-spring.servlet.multipart.location=F:/projects-full-stack/food-order-app/backend/food-order-app/uploads
-spring.servlet.multipart.max-file-size=10MB
-spring.servlet.multipart.max-request-size=10MB
 ```
 
 ---
@@ -141,7 +136,7 @@ spring.servlet.multipart.max-request-size=10MB
 
 ---
 
-## 📸 Screenshots (Example)
+## 📸 Screenshots
 
 
  ![image](https://github.com/user-attachments/assets/ce5bb690-e088-4dc6-8909-f0093e4b633a)
