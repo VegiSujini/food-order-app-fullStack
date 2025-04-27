@@ -46,18 +46,6 @@ public class OrderService {
         return repository.save(order);
     }
 
-    // public FoodOrder uploadImage(Long id, MultipartFile file) throws IOException
-    // {
-    // String path = uploadDir + file.getOriginalFilename();
-    // File dest = new File(path);
-    // dest.getParentFile().mkdirs();
-    // file.transferTo(dest);
-
-    // FoodOrder order = repository.findById(id).orElseThrow();
-    // order.setImagePath(path);
-    // return repository.save(order);
-    // }
-
     public String uploadImage(Long orderId, MultipartFile file) throws IOException {
         FoodOrder order = repository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
